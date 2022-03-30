@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&lt;skeleton-placeholder&gt; element</title>
+  <meta name="description" content="A custom element that implements the Web Share API to share user-defined data.">
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABRVJREFUWEedV01MG0cYfWMCNBKoQUhBQFOwET91ONEUFRoBFygnbqn4OxBXcQVI6YG0iNAeCIiqOXFpQ5AaqaA0FbkAphJB4UQiAqTEOQACEpsKxRbiApUgQcTeambXuzO7s9iqJVve2Zlv3rzvfT9DQODIz8+/SUA6HMSRrRAFUACA0B+oD/Q/G2Qf9Ukc019ys4hmS7dA6FqCaDQaBvBrMBgcJE6n8wdCSL/VwCkj1BCP08DGwSNQGEwVqDAldjRF+ZECCBFCss2nNLanJuQGDBI0NnjSzPh1wgzmoooSJi6XS7Hf3IZwQgAldiYzQP45tpnVXfobFYD4Eaazh4SOlsg5LDtpDFjXymQXVycmnAYXctnSUR2A3LiZOhv9ayzFZGcolLNqEzRxAEg0YGeIC1TpFFsABZoGTErIzMxERWUlcrKzkZKSgkjkPQ4O/sXGxgZWVlag6CIE8vLykJuby0JQjxgCRN5HsLe3h2AwqM6XgJAwQHD58he4OzyMD86elXpmfn4enq89iEai7H13dze83mt61IuLFLx5E8L169/C738hJjOaT2RRMDE5Afcnbvw0OIiVFys4PHwLGnmUla6uLpSVlaGlpQXPni0y4lUAXoyM3MX09F968nQ4HCgvL0dPTw9joba2lsukWlY1A0hKSsL6+jq2t7dRV1cnJF/60NjYiIGBAQZkcnKSY8CLvr4+jI6O8vma/Z+ZmUFhYSFqamqws7MjEEQKXC7Om0B6Whr8L19ia2sL9fX1lrg9d+5DNrZ/sK+LPcaAAICD/tu9e6iurkZTUxOWlpYEFiwuSD5zBmvr6wiHw6iqqlJzO0v89im5+/tueL8xGDBrbXh4mNHf1taG+SfzfF2DygCXMeleUz4f3G43FhcX4ff7sbm5yb6BQBDv3r21CDMeA7/cuYMv6+qY+5aXl0UXyERIhTM0NISs81lGVQYQiURYGI6NjWF8fFw3JAAYG+XKuRrbU74pXHRfRGVlJXZ3dw0AlNwCVwGbpfYBBnlUjC6XCyUlJSgqKkJxcTH75n6kxntnewcezT4SwvD+/T8w9/ixbiY1NZUJj558dXUVDQ0NFvaYBmwbDKHqqWubm5vR39+PiYkJFglGHvAKxmNNCB0MBALo7OzE5tamOodLesRlzoR8s2HBC5SVfYqHD8exsLCA1tZWAcDIyAimp6f1VTT77e/vIxQKGco3NVqWKMjKyoLHcxXbwX/w4M8HamPGlf/S0lIW/1SglA2eAVkYSs5gBBY1bUSB6giqfp/Ph7m5ORZaAl0Aqw9UhLOzs2hvbxcB3OrD6O9aIuJ21lsKjXq+ObIwkJaejr+fP8fJyQlufHcDa6trODo6AhVlTk4O8/vnFRW4/fNtlnrlDPCZgPsvK0bmTEgN9vb2wuPx6P2wSKOCwOsgrnx1hfk3BuCa14tbLBWPWQqzTSVWq6eLhaFYi+mCouIiXLr0GTIyMpCcnExbaRweHiIQDODpk6c4Pj7WcTmdTnx84QK2Xr3SBSf1vTZouIBoGjhttuVWoKnSHE+xYVn/bbLPa8JSjOJgUV/roSpzaqyJPQUJLwuWB2RzealabkUSWgQs9snE0mVSEZqSkzmAEiLFOsleenxvlkBTGm//OKlTtpx3gdOZHyLEkZ3ICcQzaRVEG0xAeya/EShKNPz/LqfSyJCFgcqOfpE1tcUKvZwCcDidzpsAOtRLqvgxV0pbzyZ0GVAnKYqiX8//A0jiUt3sppbZAAAAAElFTkSuQmCC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/stackoverflow-dark.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="skeleton-placeholder-element">&lt;skeleton-placeholder&gt; element</h1>
+
+    <p>A custom element that acts as a placeholder to indicate that some content will eventually be rendered.</p>
+
+    <h2 id="demo">Demo</h2>
+
+    <h3 id="effects">Effects</h3>
+
+    <div class="card">
+      <h4>None</h4>
+      <skeleton-placeholder effect="none"></skeleton-placeholder>
+      <pre class="language-html"><code>&lt;skeleton-placeholder effect="none"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h4>Wave</h4>
+      <skeleton-placeholder effect="wave"></skeleton-placeholder>
+      <pre class="language-html"><code>&lt;skeleton-placeholder effect="wave"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h4>Fade</h4>
+      <skeleton-placeholder effect="fade"></skeleton-placeholder>
+      <pre class="language-html"><code>&lt;skeleton-placeholder effect="fade"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+    </div>
+
+    <h3 id="variants">Variants</h3>
+
+    <div class="card">
+      <h4>Circle</h4>
+      <skeleton-placeholder variant="circle" style="width: 60px; height: 60px;"></skeleton-placeholder>
+      <pre class="language-html"><code>&lt;skeleton-placeholder variant="circle" style="width:60px; height:60px;"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h4>Rect</h4>
+      <skeleton-placeholder variant="rect"></skeleton-placeholder>
+      <pre class="language-html"><code>&lt;skeleton-placeholder variant="rect"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h4>Pill</h4>
+      <skeleton-placeholder variant="pill"></skeleton-placeholder>
+      <pre class="language-html"><code>&lt;skeleton-placeholder variant="pill"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+    </div>
+
+    <h3 id="css-custom-properties">CSS Custom Properties</h3>
+
+    <div class="card">
+      <skeleton-placeholder effect="wave" style="--color:pink; --wave-color:#dd98a4; --border-radius:2px;"></skeleton-placeholder>
+<pre class="language-html"><code>&lt;skeleton-placeholder
+  effect="wave"
+  style="--color:pink; --wave-color:#dd98a4; --border-radius:2px;"
+&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+    </div>
+
+    <h3 id="media-card-example">Media card example</h3>
+
+    <div class="card">
+      <div class="media">
+        <skeleton-placeholder effect="wave" variant="circle" class="avatar-skeleton"></skeleton-placeholder>
+
+        <div class="media-body">
+          <skeleton-placeholder effect="wave" class="title-skeleton"></skeleton-placeholder>
+          <skeleton-placeholder effect="wave" class="text-skeleton"></skeleton-placeholder>
+          <skeleton-placeholder effect="wave" class="text-skeleton"></skeleton-placeholder>
+          <skeleton-placeholder effect="wave" class="button-skeleton"></skeleton-placeholder>
+        </div>
+      </div>
+
+<pre class="language-html"><code>&lt;style&gt;
+  .media {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .media-body {
+    flex: 1;
+  }
+
+  .avatar-skeleton {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title-skeleton {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+
+  .text-skeleton {
+    margin-bottom: 0.5rem;
+  }
+
+  .button-skeleton {
+    max-width: 150px;
+    height: 35px;
+  }
+&lt;/style&gt;
+
+&lt;div class="media">
+  &lt;skeleton-placeholder
+    effect="wave"
+    variant="circle"
+    class="avatar-skeleton"
+  &gt;&lt;/skeleton-placeholder&gt;
+
+  &lt;div class="media-body"&gt;
+    &lt;skeleton-placeholder effect="wave" class="title-skeleton"&gt;&lt;/skeleton-placeholder&gt;
+    &lt;skeleton-placeholder effect="wave" class="text-skeleton"&gt;&lt;/skeleton-placeholder&gt;
+    &lt;skeleton-placeholder effect="wave" class="text-skeleton"&gt;&lt;/skeleton-placeholder&gt;
+    &lt;skeleton-placeholder effect="wave" class="button-skeleton"&gt;&lt;/skeleton-placeholder&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <h3 id="slot-example">Slot example</h3>
+
+    <div class="card">
+      <skeleton-placeholder variant="circle" class="slot-example" style="width:80px; height:80px;">
+        <img src="avatar.svg" alt="Person" width="50">
+      </skeleton-placeholder>
+
+<pre class="language-html"><code>&lt;style&gt;
+  skeleton-placeholder::part(placeholder) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+&lt;/style&gt;
+
+&lt;skeleton-placeholder
+  variant="circle"
+  style="width:80px; height:80px;"
+&gt;
+  &lt;img src="image.svg" alt="Person"&gt;
+&lt;/skeleton-placeholder&gt;
+</code></pre>
+    </div>
+
+    <h2 id="source">Source</h2>
+
+    <p>
+      Source code and documentation can be found in <a href="https://github.com/georapbox/skeleton-placeholder-element" target="_blank" rel="noreferrer noopener">Github repository</a>.
+    </p>
+
+    <h2 id="license">License</h2>
+
+    <p>
+      <a href="https://georapbox.mit-license.org/@2022" target="_blank" rel="noreferrer noopener">The MIT License (MIT)</a>
+    </p>
+  </div>
+
+  <script type="module">
+    import { SkeletonPlaceholder } from '../src/skeleton-placeholder.js';
+
+    SkeletonPlaceholder.defineCustomElement();
+  </script>
+
+  <script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());
+  </script>
+</body>
+</html>
