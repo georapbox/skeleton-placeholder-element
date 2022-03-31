@@ -38,11 +38,11 @@ SkeletonPlaceholder.defineCustomElement();
 
 ## API
 
-### Properties/Attributes
-| Property | Attribute | Type | Default | Description |
-| --------- | -------- | ---- | ------- | ----------- |
-| `effect` | `effect` | `'none' \| 'wave' \| 'fade'` | `'none'` | Optional. Determines the animation effect the skeleton element will use. |
-| `variant` | `variant` | `'circle' \| 'rect' \| 'pill'` | `null` | Optional. Determines the skeleton's variations. This is just a set of predefined `border-radius` values. For more flexibility, you can use the `--border-radius` custom CSS property. |
+### Properties
+| Name | Reflects | Type | Default | Description |
+| ---- | -------- | ---- | ------- | ----------- |
+| `effect` | ✓ | `'none' \| 'wave' \| 'fade'` | `'none'` | Optional. Determines the animation effect the skeleton element will use. |
+| `variant` | ✓ | `'circle' \| 'rect' \| 'pill'` | `null` | Optional. Determines the skeleton's variations. This is just a set of predefined `border-radius` values. For more flexibility, you can use the `--border-radius` custom CSS property. |
 
 All of the above properties reflect their values as HTML attributes to keep the element's DOM representation in sync with its JavaScript state.
 
