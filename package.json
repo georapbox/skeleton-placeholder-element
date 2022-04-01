@@ -1,6 +1,6 @@
 {
   "name": "@georapbox/skeleton-placeholder-element",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom element that acts as a placeholder to indicate that some content will eventually be rendered.",
   "main": "dist/skeleton-placeholder.min.js",
   "module": "dist/skeleton-placeholder.min.js",

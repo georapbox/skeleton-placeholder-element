@@ -50,6 +50,7 @@ template.innerHTML = /*template*/`
     .skeleton--wave .skeleton__placeholder {
       background-image: linear-gradient(270deg, var(--wave-color), var(--color), var(--color), var(--wave-color));
       background-size: 400% 100%;
+      transform: translate3d(0, 0, 0);
       animation: wave-animation 8s ease-in-out infinite;
     }
 
