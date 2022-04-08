@@ -8,70 +8,57 @@ template.innerHTML = html`
       --border-radius: 0.25rem;
       --color: #ced4da;
       --wave-color: #e9ecef;
-
       box-sizing: border-box;
       display: block;
       position: relative;
     }
-
     :host *,
     :host *::before,
     :host *::after {
       box-sizing: inherit;
     }
-
     [hidden] {
       display: none !important;
     }
-
     .skeleton {
       display: flex;
       width: 100%;
       height: 100%;
       min-height: 1rem;
     }
-
     .skeleton__placeholder {
       flex: 1 1 auto;
       background-color: var(--color);
       border-radius: var(--border-radius);
     }
-
     .skeleton__placeholder--circle {
       border-radius: 50%;
     }
-
     .skeleton__placeholder--rect {
       border-radius: 0;
     }
-
     .skeleton__placeholder--pill {
       border-radius: 9999px;
     }
-
     .skeleton--wave .skeleton__placeholder {
       background-image: linear-gradient(270deg, var(--wave-color), var(--color), var(--color), var(--wave-color));
       background-size: 400% 100%;
       transform: translate3d(0, 0, 0);
       animation: wave-animation 8s ease-in-out infinite;
     }
-
     .skeleton--fade .skeleton__placeholder {
       animation: fade-animation 2s ease-in-out 0.5s infinite;
     }
-
     @keyframes wave-animation {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
-
     @keyframes fade-animation {
       0% { opacity: 1; }
       50% { opacity: 0.4; }
       100% { opacity: 1; }
     }
   </style>
-
   <div part="wrapper" class="skeleton" aria-busy="true" aria-live="polite">
     <div part="placeholder" class="skeleton__placeholder"><slot></slot></div>
   </div>

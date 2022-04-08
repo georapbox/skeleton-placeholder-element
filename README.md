@@ -30,6 +30,12 @@ import { SkeletonPlaceholder } from './node_modules/@georapbox/skeleton-placehol
 SkeletonPlaceholder.defineCustomElement();
 ```
 
+Alternatively, you can import the automatically defined custom element.
+
+```js
+import './node_modules/@georapbox/skeleton-placeholder-element/dist/skeleton-placeholder-defined.min.js';
+```
+
 ### Markup
 
 ```html
