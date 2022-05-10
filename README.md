@@ -7,7 +7,7 @@
 [license]: https://georapbox.mit-license.org/@2022
 [changelog]: https://github.com/georapbox/skeleton-placeholder-element/blob/main/CHANGELOG.md
 
-# &lt;skeleton-placeholder&gt; element
+# &lt;skeleton-placeholder&gt;
 
 A custom element that acts as a placeholder to indicate that some content will eventually be rendered.
 
