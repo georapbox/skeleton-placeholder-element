@@ -8,79 +8,82 @@
   <meta name="description" content="A custom element that acts as a placeholder to indicate that some content will eventually be rendered.">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="stylesheet" href="lib/highlight/highlight-github-dark.min.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="styles/water.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="lib/highlight/highlight.min.js" defer></script>
+  <script>document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());</script>
+  <script type="module" src="scripts/main.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1 id="skeleton-placeholder-element">&lt;skeleton-placeholder&gt;</h1>
+  <h1 id="skeleton-placeholder-element">&lt;skeleton-placeholder&gt;</h1>
 
-    <p>A custom element that acts as a placeholder to indicate that some content will eventually be rendered.</p>
+  <p>A custom element that acts as a placeholder to indicate that some content will eventually be rendered.</p>
 
-    <h2 id="examples">Examples</h2>
+  <h2 id="examples">Examples</h2>
 
-    <h3 id="effects">Effects</h3>
+  <h3 id="effects">Effects</h3>
 
-    <div class="card">
-      <h4>None</h4>
-      <skeleton-placeholder effect="none"></skeleton-placeholder>
-      <pre class="language-html"><code>&lt;skeleton-placeholder effect="none"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
-    </div>
+  <div class="card">
+    <h4>None</h4>
+    <skeleton-placeholder effect="none"></skeleton-placeholder>
+    <pre class="language-html"><code>&lt;skeleton-placeholder effect="none"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+  </div>
 
-    <div class="card">
-      <h4>Wave</h4>
-      <skeleton-placeholder effect="wave"></skeleton-placeholder>
-      <pre class="language-html"><code>&lt;skeleton-placeholder effect="wave"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
-    </div>
+  <div class="card">
+    <h4>Wave</h4>
+    <skeleton-placeholder effect="wave"></skeleton-placeholder>
+    <pre class="language-html"><code>&lt;skeleton-placeholder effect="wave"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+  </div>
 
-    <div class="card">
-      <h4>Fade</h4>
-      <skeleton-placeholder effect="fade"></skeleton-placeholder>
-      <pre class="language-html"><code>&lt;skeleton-placeholder effect="fade"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
-    </div>
+  <div class="card">
+    <h4>Fade</h4>
+    <skeleton-placeholder effect="fade"></skeleton-placeholder>
+    <pre class="language-html"><code>&lt;skeleton-placeholder effect="fade"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+  </div>
 
-    <h3 id="variants">Variants</h3>
+  <h3 id="variants">Variants</h3>
 
-    <div class="card">
-      <h4>Circle</h4>
-      <skeleton-placeholder variant="circle" style="width: 60px; height: 60px;"></skeleton-placeholder>
-      <pre class="language-html"><code>&lt;skeleton-placeholder variant="circle" style="width:60px; height:60px;"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
-    </div>
+  <div class="card">
+    <h4>Circle</h4>
+    <skeleton-placeholder variant="circle" style="width: 60px; height: 60px;"></skeleton-placeholder>
+    <pre class="language-html"><code>&lt;skeleton-placeholder variant="circle" style="width:60px; height:60px;"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+  </div>
 
-    <div class="card">
-      <h4>Rect</h4>
-      <skeleton-placeholder variant="rect"></skeleton-placeholder>
-      <pre class="language-html"><code>&lt;skeleton-placeholder variant="rect"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
-    </div>
+  <div class="card">
+    <h4>Rect</h4>
+    <skeleton-placeholder variant="rect"></skeleton-placeholder>
+    <pre class="language-html"><code>&lt;skeleton-placeholder variant="rect"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+  </div>
 
-    <div class="card">
-      <h4>Pill</h4>
-      <skeleton-placeholder variant="pill"></skeleton-placeholder>
-      <pre class="language-html"><code>&lt;skeleton-placeholder variant="pill"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
-    </div>
+  <div class="card">
+    <h4>Pill</h4>
+    <skeleton-placeholder variant="pill"></skeleton-placeholder>
+    <pre class="language-html"><code>&lt;skeleton-placeholder variant="pill"&gt;&lt;/skeleton-placeholder&gt;</code></pre>
+  </div>
 
-    <h3 id="css-custom-properties">CSS Custom Properties</h3>
+  <h3 id="css-custom-properties">CSS Custom Properties</h3>
 
-    <div class="card">
-      <skeleton-placeholder effect="wave" style="--color:pink; --wave-color:#dd98a4; --border-radius:2px;"></skeleton-placeholder>
+  <div class="card">
+    <skeleton-placeholder effect="wave" style="--color:pink; --wave-color:#dd98a4; --border-radius:2px;"></skeleton-placeholder>
 <pre class="language-html"><code>&lt;skeleton-placeholder
   effect="wave"
   style="--color:pink; --wave-color:#dd98a4; --border-radius:2px;"
 &gt;&lt;/skeleton-placeholder&gt;</code></pre>
-    </div>
+  </div>
 
-    <h3 id="media-card-example">Media card example</h3>
+  <h3 id="media-card-example">Media card example</h3>
 
-    <div class="card">
-      <div class="media">
-        <skeleton-placeholder effect="wave" variant="circle" class="avatar-skeleton"></skeleton-placeholder>
+  <div class="card">
+    <div class="media">
+      <skeleton-placeholder effect="wave" variant="circle" class="avatar-skeleton"></skeleton-placeholder>
 
-        <div class="media-body">
-          <skeleton-placeholder effect="wave" class="title-skeleton"></skeleton-placeholder>
-          <skeleton-placeholder effect="wave" class="text-skeleton"></skeleton-placeholder>
-          <skeleton-placeholder effect="wave" class="text-skeleton"></skeleton-placeholder>
-          <skeleton-placeholder effect="wave" class="button-skeleton"></skeleton-placeholder>
-        </div>
+      <div class="media-body">
+        <skeleton-placeholder effect="wave" class="title-skeleton"></skeleton-placeholder>
+        <skeleton-placeholder effect="wave" class="text-skeleton"></skeleton-placeholder>
+        <skeleton-placeholder effect="wave" class="text-skeleton"></skeleton-placeholder>
+        <skeleton-placeholder effect="wave" class="button-skeleton"></skeleton-placeholder>
       </div>
+    </div>
 
 <pre class="language-html"><code>&lt;style&gt;
   .media {
@@ -126,14 +129,14 @@
     &lt;skeleton-placeholder effect="wave" class="button-skeleton"&gt;&lt;/skeleton-placeholder&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-    </div>
+  </div>
 
-    <h3 id="slot-example">Slot example</h3>
+  <h3 id="slot-example">Slot example</h3>
 
-    <div class="card">
-      <skeleton-placeholder variant="circle" class="slot-example" style="width:80px; height:80px;">
-        <img src="avatar.svg" alt="Person" width="50">
-      </skeleton-placeholder>
+  <div class="card">
+    <skeleton-placeholder variant="circle" class="slot-example" style="width:80px; height:80px;">
+      <img src="avatar.svg" alt="Person" width="50">
+    </skeleton-placeholder>
 
 <pre class="language-html"><code>&lt;style&gt;
   skeleton-placeholder::part(placeholder) {
@@ -150,28 +153,18 @@
   &lt;img src="image.svg" alt="Person"&gt;
 &lt;/skeleton-placeholder&gt;
 </code></pre>
-    </div>
-
-    <h2 id="source">Source</h2>
-
-    <p>
-      Source code and documentation can be found in <a href="https://github.com/georapbox/skeleton-placeholder-element" target="_blank" rel="noreferrer noopener">Github repository</a>.
-    </p>
-
-    <h2 id="license">License</h2>
-
-    <p>
-      <a href="https://georapbox.mit-license.org/@2022" target="_blank" rel="noreferrer noopener">The MIT License (MIT)</a>
-    </p>
   </div>
 
-  <script type="module">
-    import { SkeletonPlaceholder } from 'https://unpkg.com/@georapbox/skeleton-placeholder-element/dist/skeleton-placeholder.min.js';
+  <h2 id="source">Source</h2>
 
-    SkeletonPlaceholder.defineCustomElement();
-  </script>
+  <p>
+    Source code and documentation can be found in <a href="https://github.com/georapbox/skeleton-placeholder-element" target="_blank" rel="noreferrer noopener">Github repository</a>.
+  </p>
 
-  <script src="lib/highlight/highlight.min.js" defer></script>
-  <script>document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());</script>
+  <h2 id="license">License</h2>
+
+  <p>
+    <a href="https://georapbox.mit-license.org/@2022" target="_blank" rel="noreferrer noopener">The MIT License (MIT)</a>
+  </p>
 </body>
 </html>
