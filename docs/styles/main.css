@@ -1,4 +1,5 @@
 :root {
+  --body-max-width: 1000px;
   --card-bg-color: #ffffff;
 }
 
@@ -63,7 +64,7 @@
   margin-top: 1rem;
 }
 
-@media screen and (max-width: 413px) {
+@media screen and (max-width: 300px) {
   .media {
     flex-direction: column;
   }
