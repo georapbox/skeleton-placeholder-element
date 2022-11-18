@@ -24,7 +24,7 @@ $ npm install --save @georapbox/skeleton-placeholder-element
 ### Script
 
 ```js
-import { SkeletonPlaceholder } from './node_modules/@georapbox/skeleton-placeholder-element/dist/skeleton-placeholder.min.js';
+import { SkeletonPlaceholder } from './node_modules/@georapbox/skeleton-placeholder-element/dist/skeleton-placeholder.js';
 
 // Manually define the element.
 SkeletonPlaceholder.defineCustomElement();
@@ -33,7 +33,7 @@ SkeletonPlaceholder.defineCustomElement();
 Alternatively, you can import the automatically defined custom element.
 
 ```js
-import './node_modules/@georapbox/skeleton-placeholder-element/dist/skeleton-placeholder-defined.min.js';
+import './node_modules/@georapbox/skeleton-placeholder-element/dist/skeleton-placeholder-defined.js';
 ```
 
 ### Markup

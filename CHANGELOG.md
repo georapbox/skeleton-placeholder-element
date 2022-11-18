@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v2.0.0 (2022-11-18)
+
+- Refactor to use private class fields.
+- Replace rollup.js with parcel.js for bundling.
+- Update dev dependencies.
+
+### Breaking Changes
+
+- Only minified production builds will be included in the `dist` folder from now on.
+
 ## v1.1.0 (2022-04-08)
 
 - Export the defined custom element as `skeleton-placeholder-defined.js` in case you don't want to manualy define it.

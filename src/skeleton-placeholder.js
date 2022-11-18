@@ -64,49 +64,40 @@ template.innerHTML = html`
   </div>
 `;
 
-/**
- * @csspart wrapper - The skeleton's internal wrapper element.
- * @csspart placeholder - The skeleton's placeholder element.
- *
- * @cssproperty --border-radius - The element's border radius.
- * @cssproperty --color - The color of the element.
- * @cssproperty --wave-color - The color of the wave effect.
- *
- * @example
- *
- * <skeleton-placeholder effect="fade" variant="circle" style="width: 50px; height: 50px;"></skeleton-placeholder>
- */
 class SkeletonPlaceholder extends HTMLElement {
+  #wrapperEl;
+  #placeholderEl;
+
   constructor() {
     super();
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.$wrapperElement = this.shadowRoot.querySelector('[part="wrapper"]');
-    this.$placeholderElement = this.shadowRoot.querySelector('[part="placeholder"]');
+    this.#wrapperEl = this.shadowRoot.querySelector('[part="wrapper"]');
+    this.#placeholderEl = this.shadowRoot.querySelector('[part="placeholder"]');
+  }
+
+  connectedCallback() {
+    this.#upgradeProperty('effect');
+    this.#upgradeProperty('variant');
+
+    if (!this.effect) {
+      this.effect = 'none';
+    }
   }
 
   static get observedAttributes() {
     return ['effect', 'variant'];
   }
 
-  connectedCallback() {
-    if (!this.effect) {
-      this.effect = 'none';
-    }
-
-    this._upgradeProperty('effect');
-    this._upgradeProperty('variant');
-  }
-
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'effect') {
-      this.$wrapperElement.className = this._getWrapperElementClassName(newValue);
+      this.#wrapperEl.className = this.#getWrapperElementClassName(newValue);
     }
 
     if (name === 'variant') {
-      this.$placeholderElement.className = this._getPlaceholderElementClassName(newValue);
+      this.#placeholderEl.className = this.#getPlaceholderElementClassName(newValue);
     }
   }
 
@@ -126,7 +117,7 @@ class SkeletonPlaceholder extends HTMLElement {
     this.setAttribute('variant', value);
   }
 
-  _getWrapperElementClassName(effectValue) {
+  #getWrapperElementClassName(effectValue) {
     let className = '';
 
     switch (effectValue) {
@@ -146,7 +137,7 @@ class SkeletonPlaceholder extends HTMLElement {
     return className;
   }
 
-  _getPlaceholderElementClassName(variantValue) {
+  #getPlaceholderElementClassName(variantValue) {
     let className = '';
 
     switch (variantValue) {
@@ -174,7 +165,7 @@ class SkeletonPlaceholder extends HTMLElement {
    * upgraded element would miss that property and the instance property
    * would prevent the class property setter from ever being called.
    */
-  _upgradeProperty(prop) {
+  #upgradeProperty(prop) {
     if (Object.prototype.hasOwnProperty.call(this, prop)) {
       const value = this[prop];
       delete this[prop];
