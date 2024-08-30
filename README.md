@@ -2,9 +2,7 @@
 [![npm license](https://img.shields.io/npm/l/@georapbox/skeleton-placeholder-element.svg)](https://www.npmjs.com/package/@georapbox/skeleton-placeholder-element)
 
 [demo]: https://georapbox.github.io/skeleton-placeholder-element/
-[support]: https://caniuse.com/#feat=custom-elementsv1
-[polyfill]: https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements
-[license]: https://georapbox.mit-license.org/@2022
+[license]: https://github.com/georapbox/skeleton-placeholder-element/blob/main/LICENSE
 [changelog]: https://github.com/georapbox/skeleton-placeholder-element/blob/main/CHANGELOG.md
 
 # &lt;skeleton-placeholder&gt;
@@ -16,7 +14,7 @@ A custom element that acts as a placeholder to indicate that some content will e
 ## Install
 
 ```sh
-$ npm install --save @georapbox/skeleton-placeholder-element
+npm install --save @georapbox/skeleton-placeholder-element
 ```
 
 ## Usage
@@ -42,15 +40,17 @@ import './node_modules/@georapbox/skeleton-placeholder-element/dist/skeleton-pla
 <skeleton-placeholder effect="wave" variant="pill"></skeleton-placeholder>
 ```
 
+### Style
+
+By default, the component is style-free to remain as less opinionated as possible. However, you can style the various elements of the component using [CSS Parts](#css-parts) and [CSS Custom Properties](#css-custom-properties) provided for this purpose.
+
 ## API
 
 ### Properties
-| Name | Reflects | Type | Default | Description |
-| ---- | -------- | ---- | ------- | ----------- |
-| `effect` | ✓ | `'none' \| 'wave' \| 'fade'` | `'none'` | Optional. Determines the animation effect the skeleton element will use. |
-| `variant` | ✓ | `'circle' \| 'rect' \| 'pill'` | `null` | Optional. Determines the skeleton's variations. This is just a set of predefined `border-radius` values. For more flexibility, you can use the `--border-radius` custom CSS property. |
-
-All of the above properties reflect their values as HTML attributes to keep the element's DOM representation in sync with its JavaScript state.
+| Name | Reflects | Type | Required | Default | Description |
+| ---- | -------- | ---- | -------- | ------- | ----------- |
+| `effect` | ✓ | `'none' \| 'wave' \| 'fade'` | - | `'none'` | The animation effect the skeleton element will use. |
+| `variant` | ✓ | `'circle' \| 'rect' \| 'pill'` | - | `""` | The skeleton's variations. This is just a set of predefined `border-radius` values. For more flexibility, you can use the `--border-radius` custom CSS property. |
 
 ### Slots
 
@@ -69,23 +69,66 @@ All of the above properties reflect their values as HTML attributes to keep the 
 
 | Name | Description |
 | ---- | ----------- |
-| `--border-radius` | The element's border radius. |
-| `--color` | The color of the element. |
+| `--border-radius` | The border radius of the placeholder element. |
+| `--color` | The color of the placeholder element. |
 | `--wave-color` | The color of the wave effect. |
 
+### Methods
+
+| Name | Type | Description | Arguments |
+| ---- | ---- | ----------- | --------- |
+| `defineCustomElement` | Static | Defines/registers the custom element with the name provided. If no name is provided, the default name is used. The method checks if the element is already defined, hence will skip trying to redefine it. | `elementName='skeleton-placeholder'` |
 
 ## Changelog
 
 For API updates and breaking changes, check the [CHANGELOG][changelog].
 
-## Browser support
+## Development setup
 
-Browsers without native [custom element support][support] require a [polyfill][polyfill].
+### Prerequisites
 
-- Firefox
-- Chrome
-- Microsoft Edge
-- Safari
+The project requires `Node.js` and `npm` to be installed on your environment. Preferrably, use [nvm](https://github.com/nvm-sh/nvm) Node Version Manager and use the version of Node.js specified in the `.nvmrc` file by running `nvm use`.
+
+### Install dependencies
+
+Install the project dependencies by running the following command.
+
+```sh
+npm install
+```
+
+### Build for development
+
+Watch for changes and start a development server by running the following command.
+
+```sh
+npm start
+```
+
+### Linting
+
+Lint the code by running the following command.
+
+```sh
+npm run lint
+```
+
+### Testing
+
+Run the tests by running any of the following commands.
+
+```sh
+npm test
+npm run test:watch # watch mode
+```
+
+### Build for production
+
+Create a production build by running the following command.
+
+```sh
+npm run build
+```
 
 ## License
 

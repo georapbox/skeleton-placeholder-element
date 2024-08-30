@@ -4,69 +4,107 @@ import { SkeletonPlaceholder } from '../src/skeleton-placeholder.js';
 SkeletonPlaceholder.defineCustomElement();
 
 describe('<skeleton-placeholder>', () => {
-  it('passes accessibility test', async () => {
-    const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
-
-    await expect(el).to.be.accessible();
+  describe('accessibility', () => {
+    it('passes accessibility test', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      await expect(el).to.be.accessible();
+    });
   });
 
-  it('default properties', async () => {
-    const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+  describe('attributes/properties', () => {
+    // effect
+    it('property effect is "none" when attribute effect is not set', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      expect(el.effect).to.equal('none');
+    });
 
-    expect(el.effect).to.equal('none');
-    expect(el.getAttribute('effect')).to.equal('none');
+    it('attribute effect is null when property effect is not set', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      expect(el.getAttribute('effect')).to.be.null;
+    });
 
-    expect(el.variant).to.be.null;
-    expect(el.getAttribute('variant')).to.be.null;
-  });
+    it('property effect is "none" when attribute efect is "none"', async () => {
+      const el = await fixture(html`<skeleton-placeholder effect="none"></skeleton-placeholder>`);
+      expect(el.effect).to.equal('none');
+    });
 
-  it('change default properties', async () => {
-    const el = await fixture(html`
-      <skeleton-placeholder effect="fade" variant="rect"></skeleton-placeholder>
-    `);
+    it('attribute effect is "none" when property effect is "none"', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      el.effect = 'none';
+      await elementUpdated(el);
+      expect(el.getAttribute('effect')).to.equal('none');
+    });
 
-    expect(el.effect).to.equal('fade');
-    expect(el.getAttribute('effect')).to.equal('fade');
+    it('property effect is "wave" when attribute effect is "wave"', async () => {
+      const el = await fixture(html`<skeleton-placeholder effect="wave"></skeleton-placeholder>`);
+      expect(el.effect).to.equal('wave');
+    });
 
-    expect(el.variant).to.equal('rect');
-    expect(el.getAttribute('variant')).to.equal('rect');
-  });
+    it('attribute effect is "wave" when property effect is "wave"', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      el.effect = 'wave';
+      await elementUpdated(el);
+      expect(el.getAttribute('effect')).to.equal('wave');
+    });
 
-  it('change properties programmatically', async () => {
-    const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+    it('property effect is "fade" when attribute effect is "fade"', async () => {
+      const el = await fixture(html`<skeleton-placeholder effect="fade"></skeleton-placeholder>`);
+      expect(el.effect).to.equal('fade');
+    });
 
-    el.effect = 'fade';
-    el.variant = 'rect';
+    it('attribute effect is "fade" when property effect is "fade"', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      el.effect = 'fade';
+      await elementUpdated(el);
+      expect(el.getAttribute('effect')).to.equal('fade');
+    });
 
-    await elementUpdated(el);
+    // variant
+    it('property variant is "" when attribute variant is not set', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      expect(el.variant).to.equal('');
+    });
 
-    expect(el.effect).to.equal('fade');
-    expect(el.getAttribute('effect')).to.equal('fade');
+    it('attribute variant is null when property variant is not set', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      expect(el.getAttribute('variant')).to.be.null;
+    });
 
-    expect(el.variant).to.equal('rect');
-    expect(el.getAttribute('variant')).to.equal('rect');
+    it('property variant is "circle" when attribute variant is "circle"', async () => {
+      const el = await fixture(html`<skeleton-placeholder variant="circle"></skeleton-placeholder>`);
+      expect(el.variant).to.equal('circle');
+    });
 
-    el.effect = 'wave';
-    el.variant = 'pill';
+    it('attribute variant is "circle" when property variant is "circle"', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      el.variant = 'circle';
+      await elementUpdated(el);
+      expect(el.getAttribute('variant')).to.equal('circle');
+    });
 
-    await elementUpdated(el);
+    it('property variant is "rect" when attribute variant is "rect"', async () => {
+      const el = await fixture(html`<skeleton-placeholder variant="rect"></skeleton-placeholder>`);
+      expect(el.variant).to.equal('rect');
+    });
 
-    expect(el.effect).to.equal('wave');
-    expect(el.getAttribute('effect')).to.equal('wave');
+    it('attribute variant is "rect" when property variant is "rect"', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      el.variant = 'rect';
+      await elementUpdated(el);
+      expect(el.getAttribute('variant')).to.equal('rect');
+    });
 
-    expect(el.variant).to.equal('pill');
-    expect(el.getAttribute('variant')).to.equal('pill');
+    it('property variant is "pill" when attribute variant is "pill"', async () => {
+      const el = await fixture(html`<skeleton-placeholder variant="pill"></skeleton-placeholder>`);
+      expect(el.variant).to.equal('pill');
+    });
 
-    el.effect = 'none';
-    el.variant = 'circle';
-
-    await elementUpdated(el);
-
-    expect(el.effect).to.equal('none');
-    expect(el.getAttribute('effect')).to.equal('none');
-
-    expect(el.variant).to.equal('circle');
-    expect(el.getAttribute('variant')).to.equal('circle');
+    it('attribute variant is "pill" when property variant is "pill"', async () => {
+      const el = await fixture(html`<skeleton-placeholder></skeleton-placeholder>`);
+      el.variant = 'pill';
+      await elementUpdated(el);
+      expect(el.getAttribute('variant')).to.equal('pill');
+    });
   });
 
   afterEach(() => {

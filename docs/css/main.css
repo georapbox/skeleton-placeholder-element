@@ -1,6 +1,6 @@
 :root {
-  --body-max-width: 1000px;
-  --card-bg-color: #ffffff;
+  --body-max-width: 900px;
+  --card-bg-color: #fafafa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +15,27 @@
   box-sizing: border-box;
 }
 
+.noscript-banner {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  background-color: #f8d7da;
+  text-align: center;
+  color: #000000;
+}
+
+.component-description p {
+  margin: 0 0 0.5rem 0;
+}
+
+.component-description p:last-child {
+  margin-bottom: 0;
+}
+
+.table-of-contents > li {
+  line-height: 1.6;
+}
+
 .card {
   background-color: var(--card-bg-color);
   padding: 1rem;
@@ -26,6 +47,10 @@
 .card pre {
   margin-top: 1rem;
   margin-bottom: 0;
+}
+
+.card pre > code {
+  border: 1px solid var(--border);
 }
 
 .card h4 {
